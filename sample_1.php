@@ -12,5 +12,6 @@
   $response = $ec2->describe_instances(array('InstanceId' => $instance_id));
   $instance = $response->body->reservationSet->item->instancesSet->item;
 
+  echo 'Name = [' . $instance->tagSet->item->value . ']<br />';
   echo 'Instance Id = [' . $instance->instanceId . ']<br />';
   echo 'DNS Name = [' . $instance->dnsName . ']<br />';
